@@ -1,0 +1,50 @@
+# Copyright (c) 2023 Boston Dynamics AI Institute LLC. All rights reserved.
+
+# @package _global_
+
+defaults:
+  - /habitat: habitat_config_base
+  - /habitat/task: falcon_pointnav_task_detail
+  # - /habitat/dataset/pointnav: hm3d
+  # - /habitat/simulator/agents@habitat.simulator.agents.main_agent: depth_agent
+  - /habitat/simulator/sensor_setups@habitat.simulator.agents.agent_0: depth_agent
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_1: human_1
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_2: human_2
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_3: human_3
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_4: human_4
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_5: human_5
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_6: human_6
+  - /habitat/dataset/social_nav_v2: social-hm3d
+  - _self_
+  
+
+habitat:
+  environment:
+    max_episode_steps: 500
+  simulator:
+    type: RearrangeSim-v2
+    agents_order:
+      - agent_0
+      - agent_1
+      - agent_2
+      - agent_3
+      - agent_4
+      - agent_5
+      - agent_6
+    agents:
+      agent_0:
+        height: 0.88
+        radius: 0.18
+        sim_sensors:
+          depth_sensor:
+            width: 640
+            height: 480
+            hfov: 79
+            min_depth: 0.5
+            max_depth: 5.0
+            position: [0, 0.88, 0]
+    kinematic_mode: True 
+    habitat_sim_v0:
+      gpu_device_id: 0
+      allow_sliding: True 
+      enable_physics: True  

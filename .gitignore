@@ -1,0 +1,41 @@
+# 忽略 VSCode 配置文件
+/.vscode
+
+# 忽略 History 文件
+/.history
+
+# 忽略调试文件夹（45G！）
+/debug
+
+# 忽略数据文件夹
+/data/
+
+# 忽略 lockfiles 文件夹
+/lockfiles
+
+# 忽略输出文件夹
+/outputs
+
+# 忽略 traced 模型文件（580M）
+traced_model.pt
+mobile_sam.pt
+
+# 忽略 Python 缓存
+/__pycache__/
+
+# 忽略 RedNet/model 文件夹（627M）
+/RedNet/model
+
+# 针对一些已知的二进制文件或临时文件（可选）
+*.npy
+*.png
+*.jpg
+*.log
+*.gz
+*.pth
+/recognize-anything
+/YOLO-World
+/InternVL
+falcon/GLIP
+/Qwen
+/D-FINE
